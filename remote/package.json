@@ -1,14 +1,14 @@
 {
   "name": "@paypalcorp/remote",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project is a template for partner products to expose the express middleware which will be consumed by host platform.",
   "main": "businessInfo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "start": "serve -l tcp://localhost:3002 dist"
   },
-  "author": "",
+  "author": "prasshinde",
   "license": "ISC",
   "devDependencies": {
     "@module-federation/node": "^0.10.2",

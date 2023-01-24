@@ -1,14 +1,14 @@
 {
   "name": "@paypalcorp/platform",
   "version": "1.0.0",
-  "description": "",
+  "description": "This project is a template for the host server which will consume express middleware and run it.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "start": "node dist/main.js"
   },
-  "author": "",
+  "author": "prasshinde",
   "license": "ISC",
   "dependencies": {
     "@module-federation/node": "^0.10.2",
