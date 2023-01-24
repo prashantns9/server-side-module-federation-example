@@ -1,0 +1,6 @@
+[
+  {
+    "apiEndpoint": "businessInfo",
+    "middleware": "businessInfoMiddleware"
+  }
+]
