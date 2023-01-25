@@ -3,9 +3,10 @@ const app = express();
 import apiRegistry from './apiRegistry.json';
 
 apiRegistry.forEach(async api => {
-  const middleware = (await import('remoteLib/businessInfo')).default;
 
-  app.get(`/api/${api.apiEndpoint}`, (req, res, next) => {
+  app.get(`/api/${api.apiEndpoint}`, async (req, res, next) => {
+    const name = 'businessInfo';
+    const middleware = (await import(`remoteLib/${name}`)).default;
     middleware(req, res, next);
   })
 });
