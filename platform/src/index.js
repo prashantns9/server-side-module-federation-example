@@ -2,16 +2,24 @@ import express from 'express';
 const app = express();
 import apiRegistry from './apiRegistry.json';
 
+const Client = require('remote-modules').default;
+const client = new Client({ ttl: 0, uri: 'http://localhost:3000' });
+
+
 apiRegistry.forEach(async api => {
 
   app.get(`/api/${api.apiEndpoint}`, async (req, res, next) => {
-    const name = 'businessInfo';
-    const middleware = (await import(`remoteLib/${name}`)).default;
-    middleware(req, res, next);
+    
+    client.import().then(({ default: middleware }) => {
+      middleware(req, res, next)
+    }).catch((e) => {
+      console.log('Error', e)
+      next(e)
+    });
   })
 });
 
-app.listen(3000, () => {
-  console.log(`Server is listening on port: 3000`);
+app.listen(5000, () => {
+  console.log(`Server is listening on port: 5000`);
 });
 
