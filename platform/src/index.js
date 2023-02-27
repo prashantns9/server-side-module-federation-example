@@ -10,8 +10,8 @@ apiRegistry.forEach(async api => {
 
   app.get(`/api/${api.apiEndpoint}`, async (req, res, next) => {
     
-    client.import().then(({ default: middleware }) => {
-      middleware(req, res, next)
+    client.import().then(middlewares => {
+      middlewares[`${api.middleware}`](req, res, next)
     }).catch((e) => {
       console.log('Error', e)
       next(e)

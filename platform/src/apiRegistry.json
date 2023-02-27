@@ -2,5 +2,10 @@
   {
     "apiEndpoint": "businessInfo",
     "middleware": "businessInfoMiddleware"
+  },
+
+  {
+    "apiEndpoint": "personalInfo",
+    "middleware": "personalInfoMiddleware"
   }
 ]

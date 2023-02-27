@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@babel/preset-env": "^7.20.2",
+    "lodash": "^4.17.21",
     "remote-modules": "^0.37.1"
   }
 }

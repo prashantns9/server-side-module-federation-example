@@ -1,22 +1,14 @@
-const { UniversalFederationPlugin } = require("@module-federation/node");
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  target: false,
-  mode: 'development',
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js',
+   globalObject: 'this',
+   library: {
+     name: 'remoteMiddlwares',
+     type: 'umd',
+   },
   },
-  plugins: [
-    new UniversalFederationPlugin({
-      name: 'remoteLib',
-      library: { type: 'commonjs-module' },
-      isServer: true, // or false
-      remotes: {},
-      filename: 'remoteEntry.js',
-      exposes: {
-        './businessInfo': './src/businessInfo',
-      },
-    }),
-  ]
-}
+};

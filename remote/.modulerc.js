@@ -1,4 +1,4 @@
 module.exports = ({ Scope }) => ({
-    entry: 'src/businessInfo',
+    entry: 'dist/main',
     preset: 'node'
   });
